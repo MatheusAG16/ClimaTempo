@@ -1,0 +1,1 @@
+import ClimaInformacoesStyle from './ClimaInformacoes.module.css'
