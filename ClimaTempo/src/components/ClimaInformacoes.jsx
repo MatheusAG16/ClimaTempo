@@ -1,16 +1,19 @@
 import climaInformacoesStyle from './climaInformacoes.module.css'
 
-function ClimaInformacoes () {
+function ClimaInformacoes ({ data, cidade }) {
+
+    const temp = (data.main.temp - 273.15).toFixed(1)
+
     return(
         <section className={climaInformacoesStyle.climaContainer}>
             <p className={climaInformacoesStyle.climaCidade}>
-                São Paulo
+                {cidade}
             </p>
             <p className={climaInformacoesStyle.climaGraus}>
-                21º
+                {temp}
             </p>
             <p className={climaInformacoesStyle.climaTempo}>
-                Ensolarado
+                {data.weather[0].description}
             </p>
         </section>
     )
