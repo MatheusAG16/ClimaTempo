@@ -1,0 +1,34 @@
+.formPesquisa {
+    position: relative;
+    width: 100%;
+    height: 2em;
+    text-align: center;
+}
+
+.inputPesquisa {
+    height: 100%;
+    width: 60%;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(147, 208, 216);
+    text-wrap: nowrap;
+    
+}
+
+.btnPesquisa {
+    position: absolute;
+    right: 20%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.395);
+}
+
+.btnPesquisa:hover {
+    cursor: pointer;
+    background-color: rgb(122, 172, 178);
+    border-radius: 0px 10px 10px 0px;
+    box-sizing: border-box;
+}
