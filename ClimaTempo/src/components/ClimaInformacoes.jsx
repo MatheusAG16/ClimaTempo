@@ -1,20 +1,23 @@
 import climaInformacoesStyle from './climaInformacoes.module.css'
 
-function ClimaInformacoes ({ data, cidade }) {
+function ClimaInformacoes ({ data, cidadeFinal }) {
 
-    const temp = (data.main.temp - 273.15).toFixed(1)
+    const cidadeCapitalizada = (cidade) => {
+        return cidade.charAt(0).toUpperCase() + cidade.slice(1)
+    }
 
     return(
         <section className={climaInformacoesStyle.climaContainer}>
             <p className={climaInformacoesStyle.climaCidade}>
-                {cidade}
+                {cidadeCapitalizada(cidadeFinal)}
             </p>
             <p className={climaInformacoesStyle.climaGraus}>
-                {temp}
+                {data.main.temp}
             </p>
             <p className={climaInformacoesStyle.climaTempo}>
                 {data.weather[0].description}
             </p>
+            <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt="Weather Icon" />
         </section>
     )
 }

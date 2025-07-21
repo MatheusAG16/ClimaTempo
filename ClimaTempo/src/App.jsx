@@ -8,9 +8,11 @@ function App() {
   ***REMOVED***
 
   const [cidade, setCidade] = useState('')
+  const [cidadeFinal, setCidadeFinal] = useState('')
   const [coords, setCoords] = useState({lat: null, lon: null})
   const [weatherData, setWeatherData] = useState(null)
 
+  
   // Atualiza a cidade conforme o usuário digita no input
   const handleChange = (e) => {
       setCidade(e.target.value)
@@ -38,33 +40,42 @@ function App() {
         });
   }
 
+  useEffect(() => {
+    // Obtem a localização atual do usuário se ele permitir!
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords
+        setCoords({lat: latitude, lon: longitude})
+      })
+  }, [])
 
-  // Mostra no console as coordenadas buscadas
+  // Após as coordenadas serem setadas pela API Geolizalize, o useEffect entra em ação, busca os dados na API de Clima e seta os dados nos States.
   useEffect(() => {
     if(coords.lat && coords.lon){
       console.log('Pesquisando clima...')
       console.log(coords.lat, coords.lon)
 
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${ApiKey}`).then(response => {
+      // Requisição na API para retornar os dados sobre o clima
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&lang=pt_br&units=metric&appid=${ApiKey}`).then(response => {
         if(!response.ok){
-          throw new Error("Erro")
+          throw new Error("API fora do ar, tente novamente mais tarde.")
         }
         return(response.json())
       })
       .then(data => {
         setWeatherData(data)
+        cidade ? setCidadeFinal(cidade) : setCidadeFinal(data.name)
+      })
+      .catch((err) => {
+        console.error("Erro da API ", err)
       })
     }
   }, [coords])
 
-  if(weatherData){
-    console.log(weatherData.main.temp - 273.15)
-  }
-
   return (
     <main>
       <BarraDePesquisa cidade={cidade} onValueChange={handleChange} onPesquisar={handlePesquisar}/>
-      {weatherData ? <ClimaInformacoes data={weatherData} cidade={cidade} /> : <p>Busque sua cidade!</p>}
+      {weatherData ? <ClimaInformacoes data={weatherData} cidadeFinal={cidadeFinal} /> : <p>Busque sua cidade!</p>}
     </main>
   )
 }
