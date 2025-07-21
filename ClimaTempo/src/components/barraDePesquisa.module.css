@@ -1,16 +1,17 @@
 .formPesquisa {
     position: relative;
     width: 100%;
-    height: 2em;
+    height: 3em;
     text-align: center;
+    margin-bottom: 5px;
 }
 
 .inputPesquisa {
     height: 100%;
-    width: 60%;
-    padding: 5px;
+    width: 100%;
+    padding: 10px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.395);
     background-color: rgb(147, 208, 216);
     text-wrap: nowrap;
     
@@ -18,7 +19,7 @@
 
 .btnPesquisa {
     position: absolute;
-    right: 20%;
+    right: 0.1%;
     height: 100%;
     aspect-ratio: 1/1;
     background: transparent;

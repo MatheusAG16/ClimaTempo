@@ -75,7 +75,7 @@ function App() {
   return (
     <main>
       <BarraDePesquisa cidade={cidade} onValueChange={handleChange} onPesquisar={handlePesquisar}/>
-      {weatherData ? <ClimaInformacoes data={weatherData} cidadeFinal={cidadeFinal} /> : <p>Busque sua cidade!</p>}
+      {weatherData ? <ClimaInformacoes data={weatherData} cidadeFinal={cidadeFinal} /> : <p>Carregando...</p>}
     </main>
   )
 }

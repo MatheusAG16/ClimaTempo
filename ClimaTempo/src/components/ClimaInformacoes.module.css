@@ -4,13 +4,20 @@
     align-items: center;
     justify-content: space-around;
     background-color: rgb(147, 208, 216);
-    max-width: 200px;
-    width: 60%;
-    aspect-ratio: 1/1;
+    width: 100%;
+    flex-grow: 1;
     border-radius: 10px;
 }
 
 .climaContainer p {
     color: rgb(26, 26, 26);
-    font-size: 1.2rem;
+    font-size: 2.5rem;
+}
+
+.climaContainer img {
+    max-width: 50%;
+    background-color: #3f3f3f70;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #00000026;
 }

@@ -1,23 +1,29 @@
 import climaInformacoesStyle from './climaInformacoes.module.css'
+import {getWeatherIcon} from '../utils/getWeatherIcon'
 
 function ClimaInformacoes ({ data, cidadeFinal }) {
 
-    const cidadeCapitalizada = (cidade) => {
-        return cidade.charAt(0).toUpperCase() + cidade.slice(1)
+    //Recebe uma String e deixa a primeira letra em Maiusculo
+    const stringCapitalizada = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1)
     }
+
+    //Salva o código do ícone recebido pela API e manda para a função getWeatherIcon que retorna o SRC da imagem correspondente
+    const iconCode = data.weather[0].icon;
+    const iconSrc = getWeatherIcon(iconCode)
 
     return(
         <section className={climaInformacoesStyle.climaContainer}>
             <p className={climaInformacoesStyle.climaCidade}>
-                {cidadeCapitalizada(cidadeFinal)}
+                {stringCapitalizada(cidadeFinal)}
             </p>
             <p className={climaInformacoesStyle.climaGraus}>
                 {data.main.temp}
             </p>
             <p className={climaInformacoesStyle.climaTempo}>
-                {data.weather[0].description}
+                {stringCapitalizada(data.weather[0].description)}
             </p>
-            <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt="Weather Icon" />
+            <img src={iconSrc} alt="Weather Icon" />
         </section>
     )
 }
