@@ -1,4 +1,5 @@
 import pesquisaStyle from './barraDePesquisa.module.css'
+import searchIcon from '../assets/search.png'
 
 function BarraDePesquisa({cidade, onValueChange, onPesquisar}) {
 
@@ -14,7 +15,7 @@ function BarraDePesquisa({cidade, onValueChange, onPesquisar}) {
             />
 
             <button className={pesquisaStyle.btnPesquisa} type="submit">
-                B
+                <img src={searchIcon} alt="Search Icon"/>
             </button>
         </form>
     )

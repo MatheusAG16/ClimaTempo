@@ -1,5 +1,7 @@
 import climaInformacoesStyle from './climaInformacoes.module.css'
 import {getWeatherIcon} from '../utils/getWeatherIcon'
+import locationIcon from '../assets/location.png'
+import humidityIcon from '../assets/humidity.png'
 
 function ClimaInformacoes ({ data, cidadeFinal }) {
 
@@ -14,16 +16,26 @@ function ClimaInformacoes ({ data, cidadeFinal }) {
 
     return(
         <section className={climaInformacoesStyle.climaContainer}>
-            <p className={climaInformacoesStyle.climaCidade}>
-                {stringCapitalizada(cidadeFinal)}
-            </p>
-            <p className={climaInformacoesStyle.climaGraus}>
-                {data.main.temp}
-            </p>
-            <p className={climaInformacoesStyle.climaTempo}>
-                {stringCapitalizada(data.weather[0].description)}
-            </p>
-            <img src={iconSrc} alt="Weather Icon" />
+
+            <img src={iconSrc} alt="Weather Icon"/>
+            <div className={climaInformacoesStyle.containerInfo}>
+                <p className={climaInformacoesStyle.climaCidade}>
+                    {stringCapitalizada(cidadeFinal)}
+                    <img src={locationIcon} alt="Location Icon"/>
+                </p>
+                <p className={climaInformacoesStyle.climaTemp}>
+                    {`${(data.main.temp).toFixed(0)}°C`}
+                </p>
+                <p className={climaInformacoesStyle.climaTempo}>
+                    {stringCapitalizada(data.weather[0].description)}
+                </p>
+                <p className={climaInformacoesStyle.climaHumidity}>
+                    <img src={humidityIcon} alt="Humidity Icon"/>
+                    {`${data.main.humidity}%`}
+                </p>
+            </div>
+            
+            
         </section>
     )
 }

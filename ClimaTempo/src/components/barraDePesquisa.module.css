@@ -12,7 +12,7 @@
     padding: 10px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.395);
-    background-color: rgb(147, 208, 216);
+    background-color: rgb(51 54 55 / 20%);
     text-wrap: nowrap;
     
 }
@@ -32,4 +32,8 @@
     background-color: rgb(122, 172, 178);
     border-radius: 0px 10px 10px 0px;
     box-sizing: border-box;
+}
+
+.btnPesquisa img {
+    width: 30px;
 }
