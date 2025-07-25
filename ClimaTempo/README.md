@@ -1,76 +1,93 @@
-🌦️ ClimaTempo
-Bem-vindo ao ClimaTempo! Uma aplicação web moderna e elegante desenvolvida para visualizar as condições climáticas de qualquer cidade do mundo em tempo real. O projeto foi criado com foco em uma interface limpa, responsiva e uma experiência de usuário agradável.
+<div align="center">
+  <h1>🌦️ ClimaTempo</h1>
+</div>
 
-Este é um projeto pessoal construído com o objetivo de aprofundar meus conhecimentos em tecnologias de frontend, consumo de APIs e o fluxo completo de desenvolvimento e deploy de uma aplicação web.
+<p align="center">
+  Uma aplicação web moderna e elegante para visualizar o clima em tempo real de qualquer cidade do mundo.
+  <br />
+  <a href="https://climatemag.netlify.app" target="_blank"><strong>🔗 Acesse a versão ao vivo »</strong></a>
+</p>
 
-🔗 Acesse a versão ao vivo: https://climatempomag.netlify.app/
+---
 
-✨ Funcionalidades
-Busca por Cidade: Pesquise o clima de qualquer cidade do mundo pelo nome.
+## 📝 Sobre o Projeto
 
-Geolocalização Automática: Permita o acesso à sua localização para obter instantaneamente o clima da sua região.
+Bem-vindo ao **ClimaTempo**! Este projeto foi criado com foco em uma interface limpa, responsiva e uma experiência de usuário agradável.
 
-Design Responsivo: A interface se adapta perfeitamente a qualquer tamanho de tela, de desktops a celulares, mantendo uma apresentação bonita e funcional.
+O objetivo principal foi aprofundar conhecimentos em tecnologias de frontend, consumo de APIs e o fluxo completo de desenvolvimento e deploy de uma aplicação web.
 
-Ícones Dinâmicos: A interface exibe ícones que representam a condição climática atual (sol, chuva, nuvens, etc.).
+---
 
-🛠️ Tecnologias Utilizadas
+## ✨ Funcionalidades
+
+* **Busca por Cidade:** Pesquise o clima de qualquer cidade do mundo pelo nome.
+* **Geolocalização Automática:** Permita o acesso à sua localização para obter instantaneamente o clima da sua região.
+* **Design Responsivo:** A interface se adapta perfeitamente a qualquer tamanho de tela, de desktops a celulares.
+* **Ícones Dinâmicos:** A interface exibe ícones que representam a condição climática atual (sol, chuva, nuvens, etc.).
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
 Este projeto foi construído utilizando as seguintes tecnologias:
 
-React: Biblioteca principal para a construção da interface de usuário.
+* **React:** Biblioteca principal para a construção da interface de usuário.
+* **React Hooks:** `useState` e `useEffect` para gerenciar o estado e os efeitos colaterais.
+* **Fetch API:** Para realizar as requisições assíncronas à API de clima.
+* **CSS Modules:** Para estilização dos componentes de forma escopada e organizada.
+* **OpenWeatherMap API:** Como fonte para todos os dados climáticos.
+* **Netlify:** Para deploy e hospedagem do site.
 
-React Hooks: useState e useEffect para gerenciar o estado e os efeitos colaterais da aplicação.
+---
 
-Fetch API: Para realizar as requisições assíncronas à API de clima.
+## 🧠 Principais Aprendizados
 
-CSS Modules: Para estilização dos componentes de forma escopada e organizada.
+O desenvolvimento do ClimaTempo foi uma jornada valiosa. Os principais desafios e conhecimentos adquiridos foram:
 
-OpenWeatherMap API: Como fonte para todos os dados climáticos.
+* Consumo de APIs de terceiros de forma assíncrona, tratando os estados de carregamento, sucesso e erro.
+* Gerenciamento de estado complexo e reatividade da interface utilizando Hooks do React.
+* Resolução de problemas comuns em ambientes de produção, como a diferença de "case-sensitive" em nomes de arquivos.
+* O fluxo completo de **CI/CD** (Integração Contínua/Deploy Contínuo), onde cada `git push` para a branch principal aciona um novo build e deploy automático no Netlify.
 
-Netlify: Para deploy e hospedagem do site.
+---
 
-🧠 Principais Aprendizados
-Como um projeto de aprendizado, o desenvolvimento do ClimaTempo foi uma jornada valiosa. Os principais desafios e conhecimentos adquiridos foram:
+## 🚀 Como Executar o Projeto Localmente
 
-Consumo de APIs de terceiros de forma assíncrona, tratando os estados de carregamento, sucesso e erro.
-
-Gerenciamento de estado complexo e reatividade da interface utilizando Hooks do React.
-
-Resolução de problemas comuns em ambientes de produção, como a diferença de "case-sensitive" em nomes de arquivos entre o ambiente de desenvolvimento e o de deploy.
-
-O fluxo completo de CI/CD (Integração Contínua/Deploy Contínuo), onde cada git push para a branch principal aciona um novo build e deploy automático no Netlify.
-
-🚀 Como Executar o Projeto Localmente
 Para rodar este projeto na sua máquina, siga os passos abaixo:
 
-Clone o repositório:
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/MatheusAG16/ClimaTempo](https://github.com/MatheusAG16/ClimaTempo)
+    ```
 
-Bash
+2.  **Navegue até a pasta do projeto:**
+    ```bash
+    cd ClimaTempo
+    ```
 
-git clone https://github.com/MatheusAG16/ClimaTempo
-Navegue até a pasta do projeto:
+3.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
 
-Bash
+4.  **Configure as variáveis de ambiente:**
+    * Crie um arquivo `.env` na raiz do projeto.
+    * Adicione sua chave da API do OpenWeatherMap:
+        ```
+        VITE_API_KEY=SUA_CHAVE_AQUI
+        ```
 
-cd climatempo
-Instale as dependências:
+5.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
 
-Bash
+6.  Abra `http://localhost:5173` (ou a porta indicada no terminal) no seu navegador.
 
-npm install
-Configure as variáveis de ambiente:
+---
 
-Crie um arquivo .env na raiz da pasta climatempo.
-
-Adicione sua chave da API do OpenWeatherMap nele:
-
-VITE_API_KEY=SUA_CHAVE_AQUI
-Inicie o servidor de desenvolvimento:
-
-Bash
-
-npm run dev
-Abra http://localhost:5173 (ou a porta que aparecer no seu terminal) para ver o projeto rodando.
-
-Muito obrigado por ler até aqui!
-Projeto feito com muito carinho <3
+<p align="center">
+  Muito obrigado por ler até aqui!
+  <br>
+  Projeto feito com muito carinho ❤️
+</p>
