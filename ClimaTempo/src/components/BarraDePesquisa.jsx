@@ -10,6 +10,7 @@ function BarraDePesquisa({cidade, onValueChange, onPesquisar}) {
                 name="inputPesquisa" 
                 id="inputPesquisa" 
                 placeholder="Digite a cidade" 
+                autoComplete='off'
                 value={cidade} 
                 onChange={onValueChange}
             />

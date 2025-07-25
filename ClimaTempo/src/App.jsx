@@ -2,6 +2,7 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import BarraDePesquisa from './components/BarraDePesquisa'
 import ClimaInformacoes from './components/ClimaInformacoes'
+import ErrorMsg from './components/ErrorMsg'
 
 function App() {
 
@@ -49,7 +50,6 @@ function App() {
   }
 
   useEffect(() => {
-    setIsLoading(true)
     // Obtem a localização atual do usuário se ele permitir!
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -89,15 +89,19 @@ function App() {
     }
   }, [coords])
 
+  const handleCloseError = () => {
+    setError(null)
+  }
+
   return (
     <main>
       <BarraDePesquisa cidade={cidade} onValueChange={handleChange} onPesquisar={handlePesquisar}/>
 
-      {isLoading ? <div className='loading'>Carregando...</div> : ''}
+      {isLoading ? <div className='loading'><div className='loader'></div></div> : ''}
 
-      {error ? <div className='error'>{error}</div> : ''}
+      {error && <ErrorMsg erro={error} onClose={handleCloseError} />} 
 
-      {weatherData ? <ClimaInformacoes data={weatherData} cidadeFinal={cidadeFinal} /> : <p>Carregando...</p>}
+      {weatherData ? <ClimaInformacoes data={weatherData} cidadeFinal={cidadeFinal} /> : <p>Compartilhe sua localização para resultados locais.</p>}
     </main>
   )
 }
