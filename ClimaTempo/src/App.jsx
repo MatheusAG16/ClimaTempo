@@ -27,7 +27,7 @@ function App() {
     setIsLoading(true)
     
     // Requisição a API para trazer a lat e lon da cidade
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cidade}&limit=${'1'}&appid=${ApiKey}`).then(response => {
+    fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cidade}&limit=${'1'}&appid=${ApiKey}`).then(response => {
           if(!response.ok) {
             setIsLoading(false)
             setError('Cidade não encontrada.')
