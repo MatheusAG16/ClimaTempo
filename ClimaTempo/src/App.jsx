@@ -6,7 +6,7 @@ import ErrorMsg from './components/ErrorMsg'
 
 function App() {
 
-  ***REMOVED***
+  const ApiKey = import.meta.env.VITE_API_KEY //Chave da API nas variaveis de ambiente
 
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
