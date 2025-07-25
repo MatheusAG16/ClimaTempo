@@ -1,4 +1,4 @@
-import style from './ErrorMsg.module.css'
+import style from './errorMsg.module.css'
 
 function ErrorMsg({erro, onClose}) {
 
