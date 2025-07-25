@@ -1,4 +1,4 @@
-import climaInformacoesStyle from './climainformacoes.module.css'
+import climaInformacoesStyle from './climaInformacoes.module.css'
 import {getWeatherIcon} from '../utils/getWeatherIcon'
 import locationIcon from '../assets/location.png'
 import humidityIcon from '../assets/humidity.png'
