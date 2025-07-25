@@ -5,7 +5,7 @@
 <p align="center">
   Uma aplicação web moderna e elegante para visualizar o clima em tempo real de qualquer cidade do mundo.
   <br />
-  <a href="https://climatemag.netlify.app" target="_blank"><strong>🔗 Acesse a versão ao vivo »</strong></a>
+  <a href="https://climatempomag.netlify.app" target="_blank"><strong>🔗 Acesse a versão ao vivo »</strong></a>
 </p>
 
 ---
